@@ -27,3 +27,10 @@ Scenario: Multiply two numbers and add another
     And I enter "2" into the calculator
     And I hit "equals"
     Then I see a result of "52"
+    
+Scenario: Arbitrary precision multiplication
+    Given I enter "9223372036854775808" into the calculator
+    And I hit "multiply"
+    And I enter "9223372036854775808" into the calculator
+    And I hit "equals"
+    Then I see a result of "85070591730234615865843651857942052864"
