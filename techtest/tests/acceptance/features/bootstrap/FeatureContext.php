@@ -19,7 +19,7 @@ class FeatureContext extends BehatContext {
     }
 
     /**
-     * @Given /^I enter "(-?\d+)" into the calculator$/
+     * @Given /^I enter "(-?\d+\.?\d*)" into the calculator$/
      */
     public function iEnterIntoTheCalculator($argument1) {
         $this->calculator->pressNumber($argument1);
@@ -35,7 +35,7 @@ class FeatureContext extends BehatContext {
     }
 
     /**
-     * @Then /^I see a result of "(-?\d+)"$/
+     * @Then /^I see a result of "(-?\d+\.?\d*)"$/
      */
     public function iSeeAResultOf($argument1) {
         $result = $this->calculator->readScreen();
