@@ -30,7 +30,8 @@ class FeatureContext extends BehatContext {
      */
     public function iHitButton($btn) {
         $reflector = new ReflectionClass($this->calculator);
-        $method = $reflector->getMethod("press" . ucwords($btn));
+        $methodName = "press" . str_replace(" ", "", ucwords($btn));
+        $method = $reflector->getMethod($methodName);
         $method->invoke($this->calculator);
     }
 

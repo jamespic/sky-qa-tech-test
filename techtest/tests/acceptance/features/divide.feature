@@ -11,7 +11,7 @@ Examples:
   | 9.0  | 2.0  | 4.5      |
   | 5    | 2    | 2.5      |
   #| 1.0  | 0.0  | Infinity | # Clarify intended handling of these cases
-  #| 1    | 0    | NaN      |
+  #| 1    | 0    | Infinity |
   | -3.0 | -1.5 | 2.0      |
   | 9.0  | -3.0 | -3.0     |
   

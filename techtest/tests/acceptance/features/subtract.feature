@@ -21,3 +21,4 @@ Scenario: Subtract two numbers from a first
   And I enter "4" into the calculator
   And I hit "equals"
   Then I see a result of "6"
+
