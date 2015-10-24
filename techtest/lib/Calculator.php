@@ -53,7 +53,7 @@ class Calculator implements iCalculator {
         }
         $this->op = "/";
     }
-
+    
     public function pressEquals() {
         return $this->evaluateStack();
     }
@@ -71,6 +71,9 @@ class Calculator implements iCalculator {
                 break;
             case "/":
                 $result = $this->divide(array_shift($this->stack), array_shift($this->stack));
+                break;
+            default:
+                $result = array_shift($this->stack);
                 break;
         }
         $this->clearStack();
