@@ -36,7 +36,7 @@ class FeatureContext extends BehatContext {
     }
 
     /**
-     * @Then /^I see a result of "(-?\d+\.?\d*)"$/
+     * @Then /^I see a result of "([^"]*)"$/
      */
     public function iSeeAResultOf($argument1) {
         $result = $this->calculator->readScreen();
