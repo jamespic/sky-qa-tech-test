@@ -43,4 +43,14 @@ class FeatureContext extends BehatContext {
             throw new Exception("Wrong result, actual is [$result]");
         }
     }
+    
+    /**
+     * @Then /^I see a result of "Infinity"$/
+     */
+    public function iSeeAResultOfInfinity() {
+        $result = $this->calculator->readScreen();
+        if(!is_infinite($result)) {
+            throw new Exception("Wrong result, expected infinite, actual is [$result]");
+        }
+    }
 }
