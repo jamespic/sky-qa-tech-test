@@ -26,24 +26,12 @@ class FeatureContext extends BehatContext {
     }
 
     /**
-     * @When /^I hit "multiply"$/
+     * @Given /^I hit "([^"]*)"$/
      */
-    public function iHitMultiply() {
-        $this->calculator->pressMultiply();
-    }
-
-    /**
-     * @When /^I hit "divide"$/
-     */
-    public function iHitDivide() {
-        $this->calculator->pressDivide();
-    }
-
-    /**
-     * @Given /^I hit "equals"$/
-     */
-    public function iHitEquals() {
-        $this->calculator->pressEquals();
+    public function iHitButton($btn) {
+        $reflector = new ReflectionClass($this->calculator);
+        $method = $reflector->getMethod("press" . ucwords($btn));
+        $method->invoke($this->calculator);
     }
 
     /**
