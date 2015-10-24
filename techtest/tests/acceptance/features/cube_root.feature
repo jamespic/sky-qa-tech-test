@@ -1,9 +1,14 @@
 Feature: Cube root
 
-Scenario: Take a cube root
-  Given I enter "27.0" into the calculator
+Scenario Outline: Take a cube root
+  Given I enter "<num>" into the calculator
   And I hit "cube root"
-  Then I see a result of "3.0"
+  Then I see a result of "<result>"
+Examples:
+  | num  | result |
+  | 27.0 | 3.0    |
+  | -8.0 | -2.0   |
+  | 0.0  | 0.0    |
   
 Scenario: Repeated cube roots
   Given I enter "512.0" into the calculator
