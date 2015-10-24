@@ -10,12 +10,13 @@ set_include_path(get_include_path() . PATH_SEPARATOR . "../../lib");
 require_once("iCalculator.php");
 require_once("iScientificCalculator.php");
 require_once("Calculator.php");
+require_once("ScientificCalculator.php");
 
 class FeatureContext extends BehatContext {
     protected $calculator;
 
     public function __construct() {
-        $this->calculator = new Calculator();
+        $this->calculator = new ScientificCalculator();
     }
 
     /**
